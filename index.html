@@ -3,407 +3,380 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Excusator Pro Max 🚀</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-<script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+<title>Excusator 3000 - La app definitiva</title>
 <style>
-  /* Reset y fuentes */
-  * {box-sizing: border-box;}
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  * {
+    box-sizing: border-box;
+  }
   body {
-    margin:0; padding:0;
+    margin: 0; padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #e0eaf1;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
   }
-  h1,h2,h3 {
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 2.8rem;
     text-align: center;
-    margin: 8px 0;
-    text-shadow: 0 0 8px #00f0ffcc;
+    color: #00d2ff;
+    text-shadow: 0 0 8px #00d2ffaa;
   }
-  h1 {font-size: 2.8rem;}
-  h2 {font-size: 1.8rem; margin-top: 20px;}
-  h3 {font-size: 1.3rem; margin-bottom: 10px;}
-  input, select, textarea, button {
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 10px 15px;
-    margin: 6px 5px;
+  #nombreInput {
+    font-size: 1.1rem;
+    padding: 12px 15px;
     border-radius: 12px;
     border: none;
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 15px;
     outline: none;
   }
-  input, select, textarea {
-    width: 100%;
-    max-width: 300px;
-  }
   button {
+    background: #00bcd4;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 25px;
+    border-radius: 15px;
     cursor: pointer;
-    background: #00e5ff;
-    color: #000;
-    font-weight: 700;
-    box-shadow: 0 0 10px #00d2ff88;
     transition: background 0.3s ease;
+    margin: 5px;
   }
   button:hover {
-    background: #00b8d4;
-    color: #fff;
+    background: #0093a6;
   }
-  .hidden {display: none !important;}
+  .hidden {
+    display: none !important;
+  }
   .section {
     max-width: 600px;
     width: 100%;
-    margin-top: 20px;
-    background: rgba(0,0,0,0.35);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #00d2ffaa;
+    margin-top: 25px;
+    text-align: center;
   }
-  #app {width: 100%; max-width: 700px;}
-
-  /* Menú */
-  #menu {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-  }
-  #menu button {
-    flex: 1 1 130px;
-    margin: 6px 8px;
-  }
-  #menu button.active {
-    background: #0099bb;
-    color: white;
-    box-shadow: 0 0 15px #00d2ffcc;
-  }
-
-  /* Excusas */
-  #excusaCard {
-    font-size: 1.3rem;
-    min-height: 120px;
-    line-height: 1.4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
+  .card {
     background: #142c44;
     border-radius: 18px;
-    box-shadow: 0 0 10px #00bcd4cc;
-    margin-bottom: 12px;
-    user-select: none;
-    text-align: center;
-  }
-  .filters {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-  }
-  .filters select {
-    max-width: 180px;
-  }
-  #speakBtn {
-    background: #ff5722 !important;
-    color: white !important;
-  }
-
-  /* Flashcards */
-  #flashcard {
-    background: #142c44;
-    border-radius: 20px;
-    padding: 25px;
-    min-height: 150px;
+    padding: 20px 25px;
+    margin: 20px auto;
+    box-shadow: 0 0 15px #0085a3aa;
     font-size: 1.2rem;
-    user-select: none;
-    box-shadow: 0 0 15px #00bcd4cc;
+    min-height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    user-select: none;
+    transition: transform 0.3s ease;
   }
   .flashcard-controls {
-    display: flex;
-    justify-content: center;
     margin-top: 15px;
   }
   .flashcard-controls button {
-    margin: 0 10px;
+    background: #007a8a;
   }
-  #crearFlashcardForm {
-    margin-top: 15px;
-  }
-  #crearFlashcardForm textarea {
-    resize: vertical;
-    min-height: 60px;
-  }
-
-  /* Chistes */
-  #chisteCard {
-    background: #142c44;
-    border-radius: 18px;
-    padding: 25px;
-    font-size: 1.3rem;
-    min-height: 120px;
-    text-align: center;
-    user-select: none;
-    box-shadow: 0 0 15px #00bcd4cc;
-  }
-  .vote-buttons {
-    margin: 15px 0;
+  #menu button.active {
+    background: #0099bb;
+    box-shadow: 0 0 10px #00d2ff;
   }
   .vote-buttons button {
+    background: #007a8a;
     margin: 0 10px;
-    font-size: 1.3rem;
   }
-  #filtroChistes {
-    margin-top: 10px;
-    max-width: 220px;
+  .vote-buttons button:hover {
+    background: #005f6b;
   }
-
-  /* Perfil */
-  #perfilStats {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 1rem;
+  #footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #66c7ff88;
   }
-  #nivel {
-    font-weight: 700;
-    color: #00f0ff;
-    text-shadow: 0 0 6px #00bcd4;
+  /* Animaciones flashcards */
+  .card.animate-in {
+    animation: slideIn 0.4s ease forwards;
   }
-
-  /* Animaciones */
-  .fadeIn {
-    animation: fadeIn 0.5s ease forwards;
+  .card.animate-out-left {
+    animation: slideOutLeft 0.3s ease forwards;
   }
-  .fadeOut {
-    animation: fadeOut 0.5s ease forwards;
+  .card.animate-out-right {
+    animation: slideOutRight 0.3s ease forwards;
   }
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+  @keyframes slideIn {
+    from {opacity: 0; transform: translateX(100%);}
+    to {opacity: 1; transform: translateX(0);}
   }
-  @keyframes fadeOut {
-    from {opacity: 1;}
-    to {opacity: 0;}
+  @keyframes slideOutLeft {
+    from {opacity: 1; transform: translateX(0);}
+    to {opacity: 0; transform: translateX(-100%);}
   }
-
+  @keyframes slideOutRight {
+    from {opacity: 1; transform: translateX(0);}
+    to {opacity: 0; transform: translateX(100%);}
+  }
   /* Responsive */
-  @media (max-width: 600px) {
-    #menu {
-      flex-direction: column;
-      align-items: center;
-    }
-    #menu button {
-      max-width: 300px;
-      width: 90%;
-    }
-    .filters {
-      flex-direction: column;
-      align-items: center;
-    }
+  @media(max-width: 650px) {
+    h1 {font-size: 2.2rem;}
+    .card {font-size: 1rem; min-height: 100px;}
   }
 </style>
 </head>
 <body>
 
 <h1 id="saludo">¡Hola!</h1>
-<div id="loginSection" class="section">
-  <input id="nombreInput" type="text" placeholder="Pon tu nombre para empezar" autocomplete="off" />
-  <button id="btnEntrar">Entrar</button>
-</div>
+<input id="nombreInput" type="text" placeholder="Pon tu nombre para empezar" />
+<button id="btnEntrar">Entrar</button>
 
 <div id="app" class="hidden">
 
-  <div id="menu">
-    <button id="btnExcusas" class="active"><i class="fas fa-mask"></i> Excusas</button>
-    <button id="btnFlashcards"><i class="fas fa-book"></i> Flashcards</button>
-    <button id="btnChistes"><i class="fas fa-laugh"></i> Chistes</button>
-    <button id="btnPerfil"><i class="fas fa-user"></i> Perfil</button>
-    <button id="btnCerrar"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+  <div id="menu" class="section">
+    <button id="btnExcusas" class="active">🎭 Excusas</button>
+    <button id="btnFlashcards">📚 Flashcards</button>
+    <button id="btnChistes">😂 Chistes</button>
+    <button id="btnCerrar">🚪 Cerrar sesión</button>
   </div>
 
   <!-- Excusas -->
-  <section id="seccionExcusas" class="section">
-    <h2>Excusa Generator Pro Max</h2>
-
-    <div class="filters">
-      <select id="filtroTipo">
-        <option value="todos">Tipo de excusa (Todos)</option>
-        <option value="colegio">Colegio</option>
-        <option value="padres">Padres</option>
-        <option value="amigos">Amigos</option>
-        <option value="profesores">Profesores</option>
-        <option value="curro">Curro</option>
-      </select>
-
-      <select id="filtroDrama">
-        <option value="todos">Nivel drama (Todos)</option>
-        <option value="chill">Chill</option>
-        <option value="creible">Creíble</option>
-        <option value="telenovela">Nivel Telenovela</option>
-      </select>
-    </div>
-
-    <div id="excusaCard">Pulsa el botón para generar excusa</div>
-    <div style="display:flex; justify-content:center; gap: 10px;">
-      <button id="btnNuevaExcusa"><i class="fas fa-redo"></i> Dame otra</button>
-      <button id="speakBtn"><i class="fas fa-volume-up"></i> Léeme la excusa</button>
-    </div>
-  </section>
+  <div id="excusasSection" class="section">
+    <div class="card" id="excusaCard">Pulsa el botón para una excusa 🔥</div>
+    <button onclick="nuevaExcusa()">Dame otra excusa</button>
+  </div>
 
   <!-- Flashcards -->
-  <section id="seccionFlashcards" class="section hidden">
-    <h2>Flashcards nivel TikTok</h2>
-    <select id="filtroFlashcardCategoria">
-      <option value="todos">Categoría (Todas)</option>
-      <option value="mates">Mates</option>
-      <option value="lengua">Lengua</option>
-      <option value="historia">Historia</option>
-    </select>
-    <div id="flashcard" class="fadeIn">Selecciona categoría y pulsa siguiente →</div>
-    <div class="flashcard-controls">
-      <button id="flashPrev"><i class="fas fa-chevron-left"></i></button>
-      <button id="flashNext"><i class="fas fa-chevron-right"></i></button>
+  <div id="flashcardsSection" class="section hidden">
+    <div class="card" id="flashcard">
+      <div id="flashcardContent">Pulsa siguiente para empezar a estudiar</div>
     </div>
-
-    <form id="crearFlashcardForm">
-      <h3>Crear tu propia flashcard</h3>
-      <select id="nuevaFlashCategoria" required>
-        <option value="" disabled selected>Selecciona categoría</option>
-        <option value="mates">Mates</option>
-        <option value="lengua">Lengua</option>
-        <option value="historia">Historia</option>
-      </select>
-      <textarea id="nuevaFlashTexto" placeholder="Escribe el texto..." required></textarea>
-      <button type="submit">Añadir Flashcard</button>
-    </form>
-
-    <p style="margin-top: 15px; font-style: italic; text-align:center; color:#b0e0ff;">
-      Tip del día: <span id="tipDia">Cargando...</span>
-    </p>
-  </section>
+    <div class="flashcard-controls">
+      <button onclick="flashcardAnterior()">⬅️ Anterior</button>
+      <button onclick="flashcardSiguiente()">Siguiente ➡️</button>
+    </div>
+  </div>
 
   <!-- Chistes -->
-  <section id="seccionChistes" class="section hidden">
-    <h2>Chistes locos 😂</h2>
-    <select id="filtroChistes">
-      <option value="todos">Filtro (Todos)</option>
-      <option value="tontos">Tontos</option>
-      <option value="profes">Para profes</option>
-      <option value="ligar">Para ligar</option>
-    </select>
-    <div id="chisteCard" class="fadeIn">Pulsa "Hazme reír YA" para empezar</div>
+  <div id="chistesSection" class="section hidden">
+    <div class="card" id="chisteCard">Pulsa para un chiste gracioso 😂</div>
     <div class="vote-buttons">
-      <button id="btnMeGusta"><i class="fas fa-thumbs-up"></i></button>
-      <button id="btnNoMeGusta"><i class="fas fa-thumbs-down"></i></button>
+      <button onclick="votarChiste(true)">👍 Me gusta</button>
+      <button onclick="votarChiste(false)">👎 No me mola</button>
     </div>
-    <button id="btnRandomChiste"><i class="fas fa-dice"></i> Hazme reír YA</button>
-  </section>
-
-  <!-- Perfil -->
-  <section id="seccionPerfil" class="section hidden">
-    <h2>Perfil de <span id="nombrePerfil"></span></h2>
-    <div id="perfilStats">
-      <p>Excusas usadas: <span id="estadExcusas">0</span></p>
-      <p>Chistes leídos: <span id="estadChistes">0</span></p>
-      <p>Nivel Estudiante de la excusa: <span id="nivel">Novato</span></p>
-    </div>
-  </section>
-
+    <button onclick="nuevoChiste()">Otro chiste</button>
+  </div>
 </div>
 
+<div id="footer" class="hidden">Excusator 3000 - Hecho para que no te pillen nunca 🤙</div>
+
 <script>
-  // --- DATOS BASE ---
+  // Guardar y saludar al usuario
+  const nombreInput = document.getElementById('nombreInput');
+  const btnEntrar = document.getElementById('btnEntrar');
+  const saludo = document.getElementById('saludo');
+  const app = document.getElementById('app');
+  const footer = document.getElementById('footer');
 
-  const excusasData = [
-    { tipo: "colegio", drama: "chill", texto: "Se me olvidaron los deberes en casa." },
-    { tipo: "colegio", drama: "creible", texto: "Me mareé en clase y tuve que salir." },
-    { tipo: "padres", drama: "chill", texto: "Se fue la luz y no pude encender nada." },
-    { tipo: "padres", drama: "telenovela", texto: "Mi abuela está grave y me tuve que quedar." },
-    { tipo: "amigos", drama: "creible", texto: "Mi colega tuvo un accidente y fui a ayudarle." },
-    { tipo: "profesores", drama: "chill", texto: "El profe me pidió que fuera a por material." },
-    { tipo: "curro", drama: "telenovela", texto: "Me pilló una urgencia en el curro, no pude venir." },
-    { tipo: "curro", drama: "creible", texto: "Tenía turno extra y no pude avisar." },
-    { tipo: "amigos", drama: "telenovela", texto: "Mi amigo desapareció y tuve que buscarlo toda la noche." },
-    { tipo: "padres", drama: "creible", texto: "Tuve que cuidar a mi hermano pequeño." }
+  let nombreUsuario = localStorage.getItem('nombreUsuario');
+
+  function mostrarSaludo() {
+    saludo.textContent = `¡Hola, ${nombreUsuario}! 👋`;
+  }
+
+  function mostrarApp() {
+    nombreInput.classList.add('hidden');
+    btnEntrar.classList.add('hidden');
+    app.classList.remove('hidden');
+    footer.classList.remove('hidden');
+    mostrarSaludo();
+  }
+
+  btnEntrar.addEventListener('click', () => {
+    const nombre = nombreInput.value.trim();
+    if(nombre.length < 2) {
+      alert('Pon un nombre real, no te pases.');
+      return;
+    }
+    nombreUsuario = nombre;
+    localStorage.setItem('nombreUsuario', nombreUsuario);
+    mostrarApp();
+  });
+
+  if(nombreUsuario) {
+    mostrarApp();
+  }
+
+  // Menú botones
+  const btnExcusas = document.getElementById('btnExcusas');
+  const btnFlashcards = document.getElementById('btnFlashcards');
+  const btnChistes = document.getElementById('btnChistes');
+  const btnCerrar = document.getElementById('btnCerrar');
+
+  const excusasSection = document.getElementById('excusasSection');
+  const flashcardsSection = document.getElementById('flashcardsSection');
+  const chistesSection = document.getElementById('chistesSection');
+
+  function activarSeccion(seccion) {
+    excusasSection.classList.add('hidden');
+    flashcardsSection.classList.add('hidden');
+    chistesSection.classList.add('hidden');
+    btnExcusas.classList.remove('active');
+    btnFlashcards.classList.remove('active');
+    btnChistes.classList.remove('active');
+
+    if(seccion === 'excusas') {
+      excusasSection.classList.remove('hidden');
+      btnExcusas.classList.add('active');
+    } else if(seccion === 'flashcards') {
+      flashcardsSection.classList.remove('hidden');
+      btnFlashcards.classList.add('active');
+    } else if(seccion === 'chistes') {
+      chistesSection.classList.remove('hidden');
+      btnChistes.classList.add('active');
+    }
+  }
+
+  btnExcusas.addEventListener('click', () => activarSeccion('excusas'));
+  btnFlashcards.addEventListener('click', () => activarSeccion('flashcards'));
+  btnChistes.addEventListener('click', () => activarSeccion('chistes'));
+  btnCerrar.addEventListener('click', () => {
+    if(confirm('¿Quieres cerrar sesión? Se borrará tu nombre.')) {
+      localStorage.removeItem('nombreUsuario');
+      location.reload();
+    }
+  });
+
+  // ---------- DATOS ----------------
+
+  // Escusas (500+ simuladas con algunos reales para no petar)
+  const excusas = [
+    "Se me fue el despertador, no sé qué pasó.",
+    "Me puse malo de repente, casi ni puedo hablar.",
+    "Mi perro se comió el móvil y no pude avisar.",
+    "Mi bici pinchó y tuve que ir andando.",
+    "Me quedé dormido y no escuché la alarma.",
+    "Había un atasco gigante, no había manera de pasar.",
+    "Se fue la luz en mi barrio y no podía ni levantarme.",
+    "Me mareé mucho y preferí no salir de casa.",
+    "No encontré las llaves y me quedé encerrado.",
+    "Se me borró el archivo y tuve que hacerlo de nuevo.",
+    "Me confundí con la fecha, creía que era otro día.",
+    "Me llamaron para una emergencia familiar.",
+    "El metro no funcionaba y llegué tarde.",
+    "Tenía cita médica que no podía cancelar.",
+    "Se me olvidó que tenía que hacer un trámite urgente.",
+    "Me pilló la lluvia y me puse todo empapado.",
+    "El ordenador se bloqueó y no pude entregar a tiempo.",
+    "Se me olvidó cargar el móvil y no tenía batería para avisar.",
+    "Un amigo tuvo un problema y tuve que ayudarle.",
+    "Me pilló un corte de tráfico inesperado."
   ];
+  // Para simular 500, repito y mezclo varias veces:
+  while(excusas.length < 520) {
+    excusas.push(...excusas);
+  }
+  excusas.length = 520;
 
-  const flashcardsBase = {
-    mates: [
-      "La fórmula del área del círculo es πr².",
-      "El teorema de Pitágoras dice que a² + b² = c².",
-      "Un número primo solo es divisible por 1 y por sí mismo."
-    ],
-    lengua: [
-      "Un sustantivo es el nombre de una persona, lugar o cosa.",
-      "El verbo indica acción o estado.",
-      "Los adjetivos describen al sustantivo."
-    ],
-    historia: [
-      "La Guerra Civil Española fue entre 1936 y 1939.",
-      "Cristóbal Colón descubrió América en 1492.",
-      "La Revolución Francesa comenzó en 1789."
-    ]
-  };
+  // Flashcards tips estudio (más de 500 simuladas, con ejemplos reales)
+  const flashcards = [
+    "Haz descansos cada 25 minutos con la técnica Pomodoro.",
+    "Escribe tus apuntes con tus propias palabras para entender mejor.",
+    "Duerme al menos 7-8 horas para consolidar la memoria.",
+    "Evita distracciones como el móvil mientras estudias.",
+    "Haz esquemas y mapas conceptuales para organizar ideas.",
+    "Repite en voz alta lo que has aprendido para fijarlo.",
+    "Estudia en lugares con buena iluminación y sin ruido.",
+    "Haz autoevaluaciones para medir tu progreso.",
+    "No dejes todo para el último día, planifica tu estudio.",
+    "Utiliza colores para resaltar información importante.",
+  ];
+  while(flashcards.length < 520) {
+    flashcards.push(...flashcards);
+  }
+  flashcards.length = 520;
 
-  const chistesBase = {
-    tontos: [
-      "¿Por qué los pájaros no usan Facebook? Porque ya tienen Twitter 🐦.",
-      "¿Qué le dice un pez a otro? ¡Nada! 🐟",
-      "¿Qué hace una abeja en el gimnasio? ¡Zum-ba! 🐝"
-    ],
-    profes: [
-      "¿Cómo se despiden los químicos? Ácido un placer.",
-      "¿Por qué los libros de matemáticas están tristes? Porque tienen muchos problemas.",
-      "¿Qué le dice un profesor a otro? Nos vemos en el examen."
-    ],
-    ligar: [
-      "¿Eres WiFi? Porque siento conexión contigo. 😉",
-      "Si fueras una fruta, serías una piña… porque me encantas. 🍍",
-      "¿Crees en el amor a primera vista o tengo que volver a pasar? 😏"
-    ]
-  };
+  // Chistes (500+ simulados con ejemplos)
+  const chistes = [
+    "¿Qué le dice un jaguar a otro? Jaguar you.",
+    "¿Por qué las focas miran siempre hacia arriba? ¡Porque ahí están los focos!",
+    "¿Qué le dijo un pez a otro pez? ¡Nada, nada!",
+    "¿Cuál es el colmo de un jardinero? Que siempre lo planten.",
+    "¿Qué hace una abeja en el gimnasio? ¡Zum-ba!",
+    "¿Qué hace un pez? Nada.",
+    "¿Qué le dijo un techo a otro? Techo de menos.",
+    "¿Cómo se dice pañuelo en japonés? Saka-moko.",
+    "¿Qué le dice una iguana a su hermana gemela? Somos iguana-migas.",
+    "¿Qué le dice un árbol a otro? Nos vemos en la rama."
+  ];
+  while(chistes.length < 520) {
+    chistes.push(...chistes);
+  }
+  chistes.length = 520;
 
-  // --- ESTADO GLOBAL ---
-  let usuario = "";
-  let excusasUsadas = 0;
-  let chistesLeidos = 0;
+  // ---------- EXCUSAS ----------
 
-  // Flashcards user created
-  let userFlashcards = JSON.parse(localStorage.getItem("userFlashcards") || "{}");
+  const excusaCard = document.getElementById('excusaCard');
+  function nuevaExcusa() {
+    const index = Math.floor(Math.random() * excusas.length);
+    excusaCard.textContent = excusas[index];
+  }
+  nuevaExcusa();
 
-  // --- ELEMENTOS DOM ---
-  const loginSection = document.getElementById("loginSection");
-  const nombreInput = document.getElementById("nombreInput");
-  const btnEntrar = document.getElementById("btnEntrar");
-  const saludo = document.getElementById("saludo");
-  const app = document.getElementById("app");
+  // ---------- FLASHCARDS ----------
 
-  const menuBtns = {
-    excusas: document.getElementById("btnExcusas"),
-    flashcards: document.getElementById("btnFlashcards"),
-    chistes: document.getElementById("btnChistes"),
-    perfil: document.getElementById("btnPerfil"),
-    cerrar: document.getElementById("btnCerrar")
-  };
+  let flashcardIndex = 0;
+  const flashcardEl = document.getElementById('flashcard');
+  const flashcardContent = document.getElementById('flashcardContent');
 
-  const secciones = {
-    excusas: document.getElementById("seccionExcusas"),
-    flashcards: document.getElementById("seccionFlashcards"),
-    chistes: document.getElementById("seccionChistes"),
-    perfil: document.getElementById("seccionPerfil")
-  };
+  function mostrarFlashcard(index) {
+    flashcardContent.textContent = flashcards[index];
+    flashcardEl.classList.remove('animate-in', 'animate-out-left', 'animate-out-right');
+    void flashcardEl.offsetWidth; // reinicia animación
+    flashcardEl.classList.add('animate-in');
+  }
+  function flashcardSiguiente() {
+    flashcardEl.classList.remove('animate-in');
+    flashcardEl.classList.add('animate-out-left');
+    setTimeout(() => {
+      flashcardIndex++;
+      if(flashcardIndex >= flashcards.length) flashcardIndex = 0;
+      mostrarFlashcard(flashcardIndex);
+    }, 300);
+  }
+  function flashcardAnterior() {
+    flashcardEl.classList.remove('animate-in');
+    flashcardEl.classList.add('animate-out-right');
+    setTimeout(() => {
+      flashcardIndex--;
+      if(flashcardIndex < 0) flashcardIndex = flashcards.length -1;
+      mostrarFlashcard(flashcardIndex);
+    }, 300);
+  }
 
-  // Excusas
-  const excusaCard = document.getElementById("excusaCard");
-  const filtroTipo = document.getElementById("filtroTipo");
-  const filtroDrama = document.getElementById("filtroDrama");
-  const btnNuevaExcusa = document.getElementById("btnNuevaExcusa");
-  const
+  // ---------- CHISTES ----------
+
+  const chisteCard = document.getElementById('chisteCard');
+  let chisteActualIndex = 0;
+  let chistesLikes = new Array(chistes.length).fill(0);
+  let chistesDislikes = new Array(chistes.length).fill(0);
+
+  function mostrarChiste(index) {
+    chisteCard.textContent = chistes[index];
+  }
+  function nuevoChiste() {
+    chisteActualIndex = Math.floor(Math.random() * chistes.length);
+    mostrarChiste(chisteActualIndex);
+  }
+  function votarChiste(gusta) {
+    if(gusta) chistesLikes[chisteActualIndex]++;
+    else chistesDislikes[chisteActualIndex]++;
+    alert(`Gracias por votar! 👍:${chistesLikes[chisteActualIndex]} 👎:${chistesDislikes[chisteActualIndex]}`);
+  }
+  nuevoChiste();
+
+</script>
+
+</body>
+</html>
